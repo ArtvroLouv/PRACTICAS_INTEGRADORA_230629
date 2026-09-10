@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Flutter Mobile App Architecture",
+    "quality_profile": "showcase",
+    "viewBox": [1360, 820],
+    "views": [
+      { "id": "client-request", "label": "Client request", "focus": ["mobile-app", "keycloak", "fastapi", "postgres", "mongodb"], "note": "Trace a signed-in mobile request through the API to durable data." },
+      { "id": "maps", "label": "Maps integration", "focus": ["mobile-app", "maps-service"], "note": "Inspect the direct client-to-map-service integration." },
+      { "id": "delivery", "label": "Development setup", "focus": ["git", "github", "docker", "compose"], "note": "Review source control and local container orchestration." }
+    ]
+  },
+  "components": [
+    { "id": "mobile-app", "type": "frontend", "label": "Flutter Mobile App", "sublabel": "iOS and Android client", "pos": [76, 290], "size": [180, 78] },
+    { "id": "keycloak", "type": "security", "label": "Keycloak", "sublabel": "Authentication and tokens", "pos": [354, 160], "size": [186, 78] },
+    { "id": "fastapi", "type": "backend", "label": "FastAPI REST API", "sublabel": "Business logic and REST endpoints", "brand": "fastapi", "pos": [638, 290], "size": [198, 78] },
+    { "id": "postgres", "type": "database", "label": "PostgreSQL", "sublabel": "Relational data", "brand": "postgresql", "pos": [974, 190], "size": [174, 78] },
+    { "id": "mongodb", "type": "database", "label": "MongoDB", "sublabel": "Document data", "brand": "mongodb", "pos": [974, 400], "size": [174, 78] },
+    { "id": "maps-service", "type": "external", "label": "Leaflet / Maps Service", "sublabel": "Map tiles and geospatial display", "pos": [354, 470], "size": [204, 78] },
+    { "id": "git", "type": "external", "label": "Git", "sublabel": "Local version control", "pos": [222, 680], "size": [138, 66] },
+    { "id": "github", "type": "external", "label": "GitHub", "sublabel": "Remote repository", "brand": "github", "pos": [432, 680], "size": [150, 66] },
+    { "id": "docker", "type": "cloud", "label": "Docker", "sublabel": "Local containers", "brand": "docker", "pos": [664, 680], "size": [142, 66] },
+    { "id": "compose", "type": "cloud", "label": "Docker Compose", "sublabel": "Multi-service orchestration", "brand": "docker", "pos": [880, 680], "size": [184, 66] }
+  ],
+  "boundaries": [
+    { "kind": "security-group", "label": "Mobile device trust boundary", "wraps": ["mobile-app"], "pad": 30 },
+    { "kind": "security-group", "label": "Application trust boundary", "wraps": ["keycloak", "fastapi", "postgres", "mongodb"], "pad": 34 },
+    { "kind": "region", "label": "External service boundary", "wraps": ["maps-service"], "pad": 28 },
+    { "kind": "region", "label": "Development infrastructure", "wraps": ["git", "github", "docker", "compose"], "pad": 28 }
+  ],
+  "connections": [
+    { "id": "login", "from": "mobile-app", "to": "keycloak", "label": "OAuth 2.0 / OIDC login", "variant": "security" },
+    { "id": "api-request", "from": "mobile-app", "to": "fastapi", "label": "HTTPS REST request + bearer token", "variant": "emphasis", "labelAt": [450, 390] },
+    { "id": "token-validation", "from": "fastapi", "to": "keycloak", "label": "validate JWT / fetch keys", "variant": "security" },
+    { "id": "sql-data", "from": "fastapi", "to": "postgres", "label": "SQL read / write" },
+    { "id": "document-data", "from": "fastapi", "to": "mongodb", "label": "document read / write" },
+    { "id": "maps", "from": "mobile-app", "to": "maps-service", "label": "map tiles and geospatial requests", "variant": "dashed" },
+    { "id": "commit", "from": "git", "to": "github", "label": "push commits" },
+    { "id": "container-build", "from": "github", "to": "docker", "label": "source checkout / build", "variant": "dashed", "labelDy": 57 },
+    { "id": "orchestrate", "from": "docker", "to": "compose", "label": "define and run services", "variant": "dashed", "labelDy": 57 }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Main request flow", "items": ["Flutter signs in with Keycloak and receives tokens.", "The REST API validates identity, applies business rules, and reads or writes PostgreSQL and MongoDB."] },
+    { "dot": "amber", "title": "Trust boundaries", "items": ["The mobile client, application services, external maps, and development environment are separated for review.", "Use HTTPS and validated bearer tokens across client-to-application boundaries."] }
+  ]
+}
