@@ -19,7 +19,7 @@ Repositorio correspondiente a las prácticas de la materia Integradora, donde se
 | No. | Práctica | Descripción | Estado |
 |---:|---|---|:---:|
 | 01 | Práctica 01 | Actividades correspondientes a la primera práctica de la materia | Concluida |
-| 02 | Boceto de Arquitectura de Proyecto Integrador con Archify | Instalación y configuración de Codex-CLI y Archify, generación de un modelo arquitectónico interactivo y publicación mediante GitHub Pages | Concluida |
+| 02 | Pràctica 02 | Boceto de arquitectura con Archify y Codex  [Ver arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/) |Concluida
 
 ---
 
