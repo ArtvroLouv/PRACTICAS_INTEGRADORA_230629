@@ -3,8 +3,9 @@
 
 ### Evidencias de la práctica 02
 Puedes consultar el documento completo de evidencias aquí: 
--> [Practica02_Boceto_Arquitectura_Archify.docx.pdf](Evidencias/Practica02_Boceto_Arquitectura_Archify.docx.pdf) <-
+-> [Practica02_Boceto_Arquitectura_Archify.docx.pdf](/Evidencias/Practica02_Boceto_Arquitectura_Archify.docx.pdf) <-
 
+[Ver arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/)
 
 En esta práctica se realizó la instalación y configuración del agente de modelado arquitectónico **Archify**, utilizando **Codex** para generar un primer boceto interactivo de la arquitectura del proyecto integrador.
 
