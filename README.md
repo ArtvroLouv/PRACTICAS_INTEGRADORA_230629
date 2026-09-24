@@ -25,6 +25,11 @@ Repositorio correspondiente a las prácticas de la materia Integradora, donde se
 
 ## Práctica 02 - Boceto de Arquitectura con Archify
 
+### Evidencias de la práctica 02
+Puedes consultar el documento completo de evidencias aquí: 
+-> [Practica02_Boceto_Arquitectura_Archify.docx.pdf](Evidencias/Practica02_Boceto_Arquitectura_Archify.docx.pdf) <-
+
+
 En esta práctica se realizó la instalación y configuración del agente de modelado arquitectónico **Archify**, utilizando **Codex** para generar un primer boceto interactivo de la arquitectura del proyecto integrador.
 
 La arquitectura propuesta contempla los siguientes componentes:
