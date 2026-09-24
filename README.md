@@ -19,7 +19,7 @@ Repositorio correspondiente a las prácticas de la materia Integradora, donde se
 | No. | Práctica | Descripción | Estado |
 |---:|---|---|:---:|
 | 01 | Práctica 01 | Actividades correspondientes a la primera práctica de la materia | Concluida |
-| 02 | Pràctica 02 | Boceto de arquitectura con Archify y Codex  [Ver arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/) |Concluida
+| 02 | Pràctica 02 | Boceto de arquitectura con Archify y Codex <br> [Ver arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/) | Concluida |
 
 ---
 
