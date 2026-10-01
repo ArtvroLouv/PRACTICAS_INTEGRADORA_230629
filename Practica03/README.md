@@ -9,6 +9,43 @@ El objetivo principal fue organizar de manera visual y accesible los nueve bloqu
 
 ---
 
+## Prompt Utilizado
+
+```text
+Actúa como un desarrollador Frontend experto en HTML5, CSS3 y JavaScript moderno.
+
+Necesito que generes una aplicación web dinámica e interactiva que represente el Business Model Canvas (Lienzo de Modelo de Negocio) aplicado al servicio de streaming Spotify, basada en las siguientes especificaciones:
+
+1. Estructura y Maquetación (HTML5 & CSS Grid):
+   - Estructura semántica con etiquetas <header>, <main>, <section>, <article> y <footer>.
+   - Distribución del lienzo usando CSS Grid de 5 columnas para reproducir la maquetación oficial del Business Model Canvas con los 9 bloques principales:
+     * Socios clave (grid-row span 2)
+     * Actividades clave
+     * Recursos clave
+     * Propuesta de valor (grid-row span 2)
+     * Relación con clientes
+     * Canales
+     * Segmentos de clientes (grid-row span 2)
+     * Estructura de costos (fila inferior)
+     * Fuentes de ingreso (fila inferior)
+   - Agrega un bloque o sección adicional al final para "Hipótesis de Validación".
+
+2. Diseño Visual e Identidad (CSS3):
+   - Usa variables CSS en :root con una paleta temática de Spotify (fondos oscuros, verde distintivo #1ED760, tonos menta, ámbar y violeta para destacar secciones específicas).
+   - Estilo moderno utilizando cards independientes con gradientes suaves, bordes redondeados, sombras sutiles y tags/etiquetas de colores.
+   - Totalmente responsivo utilizando @media queries (2 columnas en <= 900px y 1 sola columna en <= 540px).
+
+3. Dinamismo y Funcionalidad (JavaScript Vanilla):
+   - Haz que la información NO sea puramente estática. Define los datos de Spotify en una estructura/objeto JSON o arreglo dentro del código.
+   - Renderiza dinámicamente las tarjetas (cards) y listas dentro de cada bloque del Canvas desde JavaScript.
+   - Incluye interactividad dinámica:
+     * Permitir agregar dinámicamente nuevas tarjetas/tarjetas de hipótesis desde un formulario modal o controles simples.
+     * Filtros rápidos o búsqueda dinámica para resaltar tarjetas por categoría o tipo de cliente (ej. Usuarios Gratis vs. Suscriptores Premium).
+     * Opción para colapsar/expandir o dar 'hover' interactivo a cada bloque para ver detalles del análisis.
+
+Entrega el código limpio, bien comentado, utilizando buenas prácticas y listo para ejecutarse en un archivo único (o dividido en index.html, styles.css y script.js).
+```
+
 ## Actividades Realizadas
 
 1. **Estructuración Semántica del Documento (HTML5)**
