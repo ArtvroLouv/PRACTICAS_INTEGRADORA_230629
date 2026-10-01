@@ -1,0 +1,75 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Modelo Canvas · Spotify",
+    "animation": "trace",
+    "visual_preset": "signal-flow",
+    "quality_profile": "standard",
+    "views": [
+      {
+        "id": "valor",
+        "label": "Propuesta de valor",
+        "focus": ["usuarios", "producto", "premium", "creadores"],
+        "note": "Cómo una experiencia de audio personalizada crea valor para oyentes y creadores."
+      },
+      {
+        "id": "crecimiento",
+        "label": "Crecimiento",
+        "focus": ["usuarios", "producto", "datos", "costos", "premium"],
+        "note": "El ciclo entre descubrimiento, datos, suscripción y publicidad."
+      },
+      {
+        "id": "operacion",
+        "label": "Operación",
+        "focus": ["licencias", "producto", "datos", "costos", "creadores"],
+        "note": "Los recursos y actividades que sostienen el catálogo y la plataforma."
+      }
+    ]
+  },
+  "lanes": [
+    { "id": "mercado", "label": "Mercado y audiencia" },
+    { "id": "plataforma", "label": "Producto y datos" },
+    { "id": "ecosistema", "label": "Ecosistema musical" },
+    { "id": "negocio", "label": "Monetización y estructura" }
+  ],
+  "phases": [
+    { "id": "captar", "label": "Captar", "fromCol": 0, "toCol": 1 },
+    { "id": "personalizar", "label": "Personalizar", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "monetizar", "label": "Monetizar", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "audiencia", "label": "Segmentos y canales", "lane": "mercado", "fromCol": 0, "toCol": 2, "variant": "default" },
+    { "id": "motor", "label": "Motor de descubrimiento", "lane": "plataforma", "fromCol": 1, "toCol": 3, "variant": "emphasis" },
+    { "id": "oferta", "label": "Oferta y alianzas", "lane": "ecosistema", "fromCol": 2, "toCol": 5, "variant": "dashed" },
+    { "id": "economia", "label": "Ingresos y costos", "lane": "negocio", "fromCol": 3, "toCol": 5, "variant": "security" }
+  ],
+  "mainPath": ["usuarios", "canales", "producto", "datos", "premium", "ingresos"],
+  "nodes": [
+    { "id": "usuarios", "lane": "mercado", "col": 0, "type": "external", "label": "Segmentos de clientes", "sublabel": "oyentes y familias", "width": 180 },
+    { "id": "canales", "lane": "mercado", "col": 1, "type": "frontend", "label": "Canales", "sublabel": "app, web y alianzas", "width": 180 },
+    { "id": "producto", "lane": "plataforma", "col": 2, "type": "frontend", "label": "Propuesta de valor", "sublabel": "audio y descubrimiento", "tag": "freemium", "width": 180 },
+    { "id": "datos", "lane": "plataforma", "col": 3, "type": "database", "label": "Recursos clave", "sublabel": "datos y algoritmos", "width": 180 },
+    { "id": "licencias", "lane": "ecosistema", "col": 2, "type": "security", "label": "Socios clave", "sublabel": "sellos y artistas", "width": 180 },
+    { "id": "creadores", "lane": "ecosistema", "col": 3, "type": "cloud", "label": "Relación con clientes", "sublabel": "playlists y soporte", "width": 180 },
+    { "id": "premium", "lane": "negocio", "col": 4, "type": "backend", "label": "Fuentes de ingreso", "sublabel": "Premium y anuncios", "tag": "suscripción + ads", "width": 180 },
+    { "id": "costos", "lane": "negocio", "col": 3, "type": "messagebus", "label": "Actividades y costos", "sublabel": "licencias y marketing", "width": 180 },
+    { "id": "ingresos", "lane": "negocio", "col": 5, "type": "backend", "label": "Valor sostenible", "sublabel": "retención y regalías", "width": 180 }
+  ],
+  "edges": [
+    { "id": "audiencia-canal", "from": "usuarios", "to": "canales", "label": "adquisición", "variant": "default", "role": "main" },
+    { "id": "canal-valor", "from": "canales", "to": "producto", "label": "escucha", "variant": "emphasis", "role": "main" },
+    { "id": "valor-datos", "from": "producto", "to": "datos", "label": "señales de uso", "variant": "emphasis", "role": "main" },
+    { "id": "datos-ingresos", "from": "datos", "to": "premium", "label": "conversión", "variant": "default", "role": "main" },
+    { "id": "premium-resultado", "from": "premium", "to": "ingresos", "label": "monetiza", "variant": "emphasis", "role": "main" },
+    { "id": "socios-catalogo", "from": "licencias", "to": "producto", "label": "catálogo y derechos", "variant": "security", "role": "branch" },
+    { "id": "producto-relacion", "from": "producto", "to": "creadores", "label": "experiencia personalizada", "variant": "dashed", "role": "branch" },
+    { "id": "relacion-retencion", "from": "creadores", "to": "premium", "label": "retención", "variant": "default", "role": "branch" },
+    { "id": "costos-recursos", "from": "costos", "to": "licencias", "label": "pago de regalías", "variant": "dashed", "role": "branch" },
+    { "id": "costos-ingresos", "from": "costos", "to": "premium", "label": "estructura de costos", "variant": "security", "role": "branch" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Idea central", "items": ["La personalización convierte un catálogo enorme en una experiencia cotidiana.", "El modelo freemium abre la puerta y Premium aumenta el valor por usuario."] },
+    { "dot": "violet", "title": "Dinámica del canvas", "items": ["Selecciona una vista para enfocar cada bloque estratégico.", "Usa búsqueda, zoom y trazado de relaciones para explorar conexiones."] }
+  ]
+}
