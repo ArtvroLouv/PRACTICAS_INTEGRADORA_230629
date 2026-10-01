@@ -19,8 +19,8 @@ Repositorio correspondiente a las prácticas de la materia Integradora, donde se
 | No. | Práctica | Descripción | Estado |
 |---:|---|---|:---:|
 | 01 | Práctica 01 | Actividades correspondientes a la primera práctica de la materia | Concluida |
-| 02 | Boceto de Arquitectura de Proyecto Integrador con Archify | Instalación y configuración de Codex-CLI y Archify, generación de un modelo arquitectónico interactivo y publicación mediante GitHub Pages | Concluida |
-
+| 02 | [Boceto de Arquitectura de Proyecto Integrador con Archify](/Practica%2002/) | Instalación y configuración de Codex-CLI y Archify, generación de un modelo arquitectónico interactivo y publicación mediante GitHub Pages | Concluida |
+| 03 | [Boceto de Modelo Canvas con Archify](/Practica03/) |Creaciòn de boceto canvas en este caso de la App Multiplataforma: Spotify | Concluida |
 ---
 
 ## Práctica 02 - Boceto de Arquitectura con Archify

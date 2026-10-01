@@ -1,6 +1,6 @@
 # Práctica 03: Implementación del Business Model Canvas de Spotify
 
-[Ver Arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/Practica03/index.html)
+[Ver Arquitectura](https://artvrolouv.github.io/PRACTICAS_INTEGRADORA_230629/Practica03/)
 
 ## Descripción de la Práctica
 En esta práctica se diseñó e implementó una interfaz web estructurada y responsiva que representa el Business Model Canvas (Lienzo de Modelo de Negocio) aplicado al servicio de streaming de audio Spotify.
